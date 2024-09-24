@@ -18,14 +18,18 @@ Features
 Offline SOS Messaging: Send distress signals without internet or cellular connection.
 Predefined Emergency Contacts: Instantly notify trusted contacts with location information and distress messages via SMS or over the mesh network.
 GPS Location Sharing: Share your exact location with rescuers or friends even when offline.
+
 📍 Location Tracking & Mapping
 Offline Maps: Track your location and pinpoint others around you using GPS, without relying on internet maps.
 Location-Based Alerts: Receive location-triggered alerts to ensure help is nearby.
+
 🚑 Emergency First Aid Guide
 Access comprehensive first aid guides and life-saving techniques for handling emergencies such as fractures, burns, or CPR.
 Use natural voice commands for easy navigation of first aid instructions.
+
 🎙️ Voice Command Integration
 Hands-free interactions with the app using voice commands. For instance, "Help with burns" will guide you through first aid steps.
+
 🔗 Mesh Network Communication
 Establishes a local mesh network over WiFi to communicate directly with nearby devices, allowing text messages, voice, and video calls even without internet.
 Unique Mesh Network Features
