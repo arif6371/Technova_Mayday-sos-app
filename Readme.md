@@ -1,96 +1,92 @@
-# mayday - A friend in need
+Mayday: Offline SOS & Emergency Response App
+Mayday is a Kotlin and TypeScript-based emergency app that ensures seamless communication and assistance, even in areas without internet connectivity. It empowers users to send SOS signals, make voice/video calls, and access critical information via mesh networks, making it ideal for use in remote locations or during disasters when traditional communication channels are down.
 
-![App ScreenShot](https://i.postimg.cc/3JfvQ0PR/appLogo.jpg)
+Table of Contents
+Motivation
+Features
+Unique Mesh Network Features
+Architecture
+Installation
+Usage
+Design
+License
+Motivation
+Mayday was developed to tackle the problem of communication failures during natural disasters, network outages, or in remote areas. When regular internet-based apps fail, Mayday’s offline-first design ensures that users can send out SOS signals, access first aid information, and communicate without needing a network connection.
 
-Welcome to the **mayday** – your lifeline in critical situations. This app is your indispensable companion, providing vital first aid information and powerful features to guide you through emergencies with confidence. Offering complete voice control, offline functionality, and location tracking, it's your trusted ally when every moment counts.
+Features
+🌐 Offline Communication & SOS
+Offline SOS Messaging: Send distress signals without internet or cellular connection.
+Predefined Emergency Contacts: Instantly notify trusted contacts with location information and distress messages via SMS or over the mesh network.
+GPS Location Sharing: Share your exact location with rescuers or friends even when offline.
+📍 Location Tracking & Mapping
+Offline Maps: Track your location and pinpoint others around you using GPS, without relying on internet maps.
+Location-Based Alerts: Receive location-triggered alerts to ensure help is nearby.
+🚑 Emergency First Aid Guide
+Access comprehensive first aid guides and life-saving techniques for handling emergencies such as fractures, burns, or CPR.
+Use natural voice commands for easy navigation of first aid instructions.
+🎙️ Voice Command Integration
+Hands-free interactions with the app using voice commands. For instance, "Help with burns" will guide you through first aid steps.
+🔗 Mesh Network Communication
+Establishes a local mesh network over WiFi to communicate directly with nearby devices, allowing text messages, voice, and video calls even without internet.
+Unique Mesh Network Features
+Mayday harnesses the power of mesh networks for seamless offline communication, setting it apart from other emergency apps.
 
-## Table of Contents
+🌐 Mesh Networking for Communication
+Decentralized Communication: Devices communicate without a central server, forming a resilient network. Mayday devices can act as nodes, passing messages between users over multiple hops to extend coverage.
 
-- [Features](#features)
-- [Installation](#installation)
-- [Offline Capability](#offline-capability)
-- [Voice Control](#voice-control)
-- [Location Tracking](#location-tracking)
-- [First Aid](#first-aid)
-- [Emergency SOS](#emergency-sos)
+Data Transmission Without Internet: Data such as SOS messages, location data, and voice/video calls are transmitted directly between devices using the mesh network, even in the most remote locations.
 
-## Features
+Fast and Reliable: The mesh network allows high-speed (300Mbps+) data transfer across large areas, such as remote towns, hiking trails, or disaster zones.
 
-### 🌐 Seamless Offline Capability
+Architecture
+The Mayday app is built using:
 
-- Enjoy full app functionality even without an internet connection.
-- Access vital first aid, location information wherever you are, regardless of connectivity.
+Frontend: Kotlin for Android and TypeScript for web services.
+Backend: Built using decentralized communication protocols to support peer-to-peer mesh networking.
+Encryption: End-to-end encryption using libsodium ensures that all communications remain private and secure.
+Installation
+Android Installation
+To install the app on your Android device, follow these steps:
 
-### 🎙️ Intuitive Voice Control
+Clone the Repository:
 
-- Navigate the app effortlessly using natural voice commands.
-- Simply ask for first aid guidance, and our app will provide the answers you seek.
+bash
+Copy code
+git clone https://github.com/username/mayday-sos.git
+Open in Android Studio:
 
-### 📍 Precision Location Tracking
+Open the project in Android Studio.
+Ensure the necessary SDKs are installed.
+Build the project using ./gradlew assembleRelease.
+Install the APK:
 
-- Benefit from offline location tracking to pinpoint your exact coordinates.
-- In emergencies, your location is at your fingertips, even when you're offline.
+Once the build is complete, install the APK on your device.
+Running in Dev Mode
+bash
+Copy code
+./gradlew assembleDebug
+Usage
+Set Up Emergency Contacts: Configure trusted contacts who will receive your SOS messages and location data in case of emergency.
 
-### 🚑 Comprehensive First Aid Guidance
+Enable Location Services: Turn on GPS to allow for offline location tracking.
 
-- Access expert step-by-step first aid instructions for a wide range of accidents and medical emergencies.
-- Quickly find the information you need to respond effectively to common injuries, burns, fractures, and more.
+Use SOS Button: Press the SOS button during an emergency to trigger distress signals and location sharing.
 
-### 🆘 Emergency SOS
+Make Offline Calls: Utilize the mesh network to make voice and video calls without internet.
 
-- Activate the SOS feature to send distress signals and your location to predefined contacts.
-- Ensure that help arrives promptly when you need it most.
+Design
+SOS Button
+Detailed Design
+The SOS button is central to Mayday's interface, ensuring quick access in emergencies. The button features:
 
-## Installation
+Bright Red Design: Stands out visually to ensure immediate access.
+Tap to Activate: One-tap activation to send SOS signals, location data, and trigger emergency alerts.
+Clear Confirmation: A clear confirmation popup informs the user when SOS signals are successfully sent.
+Design Image:
 
-In order to install "mayday" in your android device go to [Releases](https://github.com/Aman-in-GitHub/mayday-KUHackfest2023/releases/tag/v1.0.0) section of this repository and download the appropriate .apk file according to your device specifications.
+The SOS button has been designed with an intuitive interface that makes it accessible even under stress, with large, bold icons and a simple tap-to-trigger mechanism.
 
-If you want to run the app in your local machine, first install all the dependencies required for react native and then follow the instructions below:
+License
+Mayday is open source under the MIT License. Contributions and forks are welcome!
 
-```bash
-npx react-native@latest init YourProject
-```
-
-For Android,
-
-```bash
-npx react-native run-android
-```
-
-For IOS,
-
-```bash
-npx react-native run-ios
-```
-
-## Usage
-
-- Allow all the permissions asked during setup for the app to work as intended. (Set location to Allowed all the time)
-- Restart the app once after the initial setup.
-- Double tap on screen to activate voice mode in home screen.
-- Voice commands at [Commands](https://github.com/Aman-in-GitHub/mayday-KUHackfest2023/blob/main/voicecommands.md).
-- Double tap on the navbar to activate voice mode on other pages than home screen.
-- Jerk the phone once to activate panic mode.
-- Enjoy your safety.
-
-## Offline Capability
-
-One of the main motivations of making this app was making it accessible to most people at most places. That's why we opted to make this app available fully offline. To make this feature possible we used many native modules instead of libraries as most of them use cloud based functionality for the most part. We wrote modules for speech recognition, text-to-speech, shake detection etc. We even went out of our way to make it possible to track your location without an internet connection.
-
-## Voice Control
-
-As stated earlier to make this app accessible to most people we implemented voice control functionality for the people who don't have the perfect vision. Every gesture that can be handled with touch also has a voice command for it. For reading all the voice commands go to [Voice Commands](https://github.com/Aman-in-GitHub/mayday-KUHackfest2023/blob/main/voicecommands.md).
-
-## Location Tracking
-
-For offline location tracking we use the GPS of the phone to get the current longitude and latitude of the user and using various algorithms we tend to use that info in various places throughout our app like showing the user the closed hospitals/medicals to them with contact info and directions.
-
-Note: To get directions to the health centres nearby while offline download the offline Google Maps of your local area.
-
-## First Aid
-
-We researched the web for the most common accidents that require first aid, we scraped the aid for those accidents and converted them in a more user-friendly format in order to provide the users the best experience in their difficult times. We have the aid for accidents ranging from bee stings all the way to life threatening incidents like heart attack.
-
-## Emergency SOS
-
-With just a slight jerk to your app, it activates the panic mode and your current location with an SOS message to your pre defined contacts that are asked to you during the initial setup.
+Mayday is the go-to solution for providing emergency communication when traditional methods fail. With powerful offline features, mesh network communication, and life-saving first aid guides, Mayday ensures safety and connectivity even in the harshest conditions.
