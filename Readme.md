@@ -66,10 +66,14 @@ Install the APK:
 
 Once the build is complete, install the APK on your device.
 Running in Dev Mode
+
 bash
 Copy code
 ./gradlew assembleDebug
+
+
 Usage
+
 Set Up Emergency Contacts: Configure trusted contacts who will receive your SOS messages and location data in case of emergency.
 
 Enable Location Services: Turn on GPS to allow for offline location tracking.
